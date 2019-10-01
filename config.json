@@ -36,21 +36,34 @@
 	],
 
 	"project-settings": [
-	{
-		"key": "instructions",
-		"name": "Choose the field and event where you want to store the randomization date. This field should be a text field. Please ensure that the field appears at the event specified, and is set to @READ-ONLY.",
-		"type": "descriptive"
-		
-	},
+	
+	   {
+      "key": "date-format",
+      "name": "Choose the level of precision for your randomization timestamp",
+      "type": "dropdown",
+      "required": true,
+      "choices": [
+        {"value": 0, "name": "Date only (eg. Y-M-D)"},
+        {"value": 1, "name": "Datetime hours and minutes (eg. Y-M-D HH:mm)"},
+		{"value": 2, "name": "Datetime hours, minutes and seconds (eg. Y-M-D HH:mm:ss)"}
+      ]
+    },
+	
 	{
 		"key": "date-field",
-		"name": "Field",
+		"name": "Choose the field where you want to store the randomization date. ",
 		"type": "field-list",
 		"required": true
 	},
 	{
+		"key": "instructions2",
+		"name": "<br/>Please ensure that the date field: <ul><li>is a text field, with the correct validation to match the date format selected</li><li>is set as read-only using the @READONLY action tag</li><li>appears at the event selected below</li></ul>",
+		"type": "descriptive"
+		
+	},
+	{
 		"key": "date-event",
-		"name": "Event",
+		"name": "Choose the event at which you want to store the randomization date",
 		"type": "event-list",
 		"required": true
 	}
