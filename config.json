@@ -1,0 +1,72 @@
+{
+	"name": "Save Randomization Date ",
+
+	"namespace": "NorwichCTU\\save_randomization_date",
+
+	"description": "Extracts the randomization date from the event log and saves it to a specified field in the project on page save.",
+
+	"documentation": "README.md",
+
+	"authors": [
+		{
+			"name": "Antony Colles",
+			"email": "a.colles@uea.ac.uk",
+			"institution": "Norwich Clinical Trials Unit"
+		}
+	],
+
+	"permissions": [
+		"redcap_save_record",
+		"redcap_data_entry_form_top"
+	],
+	
+	"enable-every-page-hooks-on-system-pages": false,	
+
+	"links": {
+		"project": [
+
+		],
+		"control-center": [
+
+		]
+	},
+
+	"no-auth-pages": [
+
+	],
+
+	"project-settings": [
+	{
+		"key": "instructions",
+		"name": "Choose the field and event where you want to store the randomization date. This field should be a text field. Please ensure that the field appears at the event specified, and is set to @READ-ONLY.",
+		"type": "descriptive"
+		
+	},
+	{
+		"key": "date-field",
+		"name": "Field",
+		"type": "field-list",
+		"required": true
+	},
+	{
+		"key": "date-event",
+		"name": "Event",
+		"type": "event-list",
+		"required": true
+	}
+
+	],
+
+	"system-settings": [
+
+	],
+
+	
+
+	"compatibility": {
+		"php-version-min": "",
+		"php-version-max": "",
+		"redcap-version-min": "",
+		"redcap-version-max": ""
+	}
+}
