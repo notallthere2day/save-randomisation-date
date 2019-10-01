@@ -28,7 +28,7 @@ class save_randomization_date  extends \ExternalModules\AbstractExternalModule {
 			// Get the randomisation date from the log
 			$sql = "SELECT DATE(ts) AS 'logged_date'
 			FROM redcap_log_event
-			WHERE description = 'randomize record' AND pk = '" . $record . "' AND project_id = " . $project_id;
+			WHERE description = 'randomize record' AND pk = '" . db_escape($record) . "' AND project_id = " . $project_id;
 
 			$q = db_query($sql);
 			$row = db_fetch_assoc($q);
