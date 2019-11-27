@@ -3,7 +3,7 @@
 
 	"namespace": "NorwichCTU\\save_randomization_date",
 
-	"description": "Extracts the randomization date from the event log and saves it to a specified field in the project on page save.",
+	"description": "Extracts the randomization timestamp from the event log and saves it to a specified field in the project on page save.",
 
 	"documentation": "README.md",
 
@@ -51,19 +51,19 @@
 	
 	{
 		"key": "date-field",
-		"name": "Choose the field where you want to store the randomization date. ",
+		"name": "Choose the field where you want to store the randomization timestamp. ",
 		"type": "field-list",
 		"required": true
 	},
 	{
 		"key": "instructions2",
-		"name": "<br/>Please ensure that the date field: <ul><li>is a text field, with the correct validation to match the date format selected</li><li>is set as read-only using the @READONLY action tag</li><li>appears at the event selected below</li></ul>",
+		"name": "<br/>Please ensure that the timestamp field: <ul><li>is a text field, with the correct validation to match the date/time format selected</li><li>is set as read-only using the @READONLY action tag, or hidden using @HIDDEN</li><li>appears at the event selected below</li></ul>",
 		"type": "descriptive"
 		
 	},
 	{
 		"key": "date-event",
-		"name": "Choose the event at which you want to store the randomization date",
+		"name": "Choose the event at which you want to store the randomization timestamp",
 		"type": "event-list",
 		"required": true
 	}

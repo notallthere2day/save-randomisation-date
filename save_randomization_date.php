@@ -10,7 +10,7 @@ class save_randomization_date  extends \ExternalModules\AbstractExternalModule {
 	}
 	
 	
-	public function redcap_save_record( int $project_id, string $record, string $instrument, int $event_id, int $group_id, string $survey_hash, int $response_id, int $repeat_instance) {
+	public function redcap_save_record($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance) {
 		
 		// Define where the randomisation date is recorded (project specific)
 		
@@ -35,7 +35,7 @@ class save_randomization_date  extends \ExternalModules\AbstractExternalModule {
 			// Get the randomisation date from the log
 			$sql = "SELECT DATE_FORMAT(ts, '$dateFormatString') AS 'logged_date'
 			FROM redcap_log_event
-			WHERE description = 'randomize record' AND pk = '" . $record . "' AND project_id = " . $project_id;
+			WHERE description = 'randomize record' AND pk = '" . db_escape($record) . "' AND project_id = " . $project_id;
 
 			$q = db_query($sql);
 			$row = db_fetch_assoc($q);
