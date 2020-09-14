@@ -33,8 +33,9 @@ class save_randomization_date  extends \ExternalModules\AbstractExternalModule {
 		if($randoDate =="") {
 						
 			// Get the randomisation date from the log
+			$log_event_table = method_exists('\REDCap', 'getLogEventTable') ? \REDCap::getLogEventTable($project_id) : "redcap_log_event";
 			$sql = "SELECT DATE_FORMAT(ts, '$dateFormatString') AS 'logged_date'
-			FROM redcap_log_event
+			FROM $log_event_table
 			WHERE description = 'randomize record' AND pk = '" . db_escape($record) . "' AND project_id = " . $project_id;
 
 			$q = db_query($sql);
