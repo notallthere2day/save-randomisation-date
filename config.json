@@ -5,6 +5,8 @@
 
 	"description": "Extracts the randomization timestamp from the event log and saves it to a specified field in the project on page save.",
 
+	"framework-version": 16,
+
 	"documentation": "README.md",
 
 	"authors": [
